@@ -3,12 +3,24 @@
 
 std::vector<int> bubbleSort(std::vector<int> number) {
 	for (int i = number.size() - 1; i >= 0; i--) {
-		int temp = 0;
-
 		for (int j = 1; j <= i; j++) {
 			if (number[j - 1] > number[j]) {
-				temp = number[j - 1];
+				int temp = number[j - 1];
 				number[j - 1] = number[j];
+				number[j] = temp;
+			}
+		}
+	}
+
+	return number;
+}
+
+std::vector<int> selectionSort(std::vector<int> number) {
+	for (int i = 0; i < number.size(); i++) {
+		for (int j = i; j < number.size(); j++) {
+			if (number[j] < number[i]) {
+				int temp = number[i];
+				number[i] = number[j];
 				number[j] = temp;
 			}
 		}
@@ -28,7 +40,11 @@ int main() {
 	std::cout << std::endl;
 
 	std::cout << "Sorted: ";
-	for (int n : bubbleSort(number)) {
+	/*for (int n : bubbleSort(number)) {
+		std::cout << n;
+	}*/
+	
+	for (int n : selectionSort(number)) {
 		std::cout << n;
 	}
 
