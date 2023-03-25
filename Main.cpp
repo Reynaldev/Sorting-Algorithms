@@ -17,20 +17,26 @@ std::vector<int> bubbleSort(std::vector<int> number) {
 
 std::vector<int> selectionSort(std::vector<int> number) {
 	for (int i = 0; i < number.size(); i++) {
+		int min = number[i];
+		int swap = i;
+
 		for (int j = i; j < number.size(); j++) {
-			if (number[j] < number[i]) {
-				int temp = number[i];
-				number[i] = number[j];
-				number[j] = temp;
+			if (number[j] < min) {
+				min = number[j];
+				swap = j;
 			}
 		}
+
+		int temp = number[i];
+		number[i] = min;
+		number[swap] = temp;
 	}
 
 	return number;
 }
 
 int main() {
-	std::vector<int> number = { 9, 8, 2, 1, 5, 3, 7, 4, 6};
+	std::vector<int> number = { 8, 9, 2, 1, 5, 3, 7, 0, 4, 6};
 
 	std::cout << "Unsorted: ";
 	for (int n : number) {
