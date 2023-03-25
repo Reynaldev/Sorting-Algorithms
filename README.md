@@ -3,7 +3,7 @@
 List of algorithm:
 - [x] Bubble Sort
 - [x] Selection Sort
-- [ ] Insertion Sort
+- [x] Insertion Sort
 - [ ] Merge Sort
 - [ ] Quicksort
 - [ ] Counting Sort
